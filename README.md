@@ -4,7 +4,7 @@ This code contains NO copyrighted code as it is merely downloading files readily
 The program's intended use is for any new members of the Animal Crossing Treasure Hub for Yuzu Based Emulators discord server that do not know what they are doing.
 
 This program does the following:
-1) Downloads the latest version of Eden (As of writing that is 0.2.0-rc2
+1) Downloads the latest version of Eden (As of writing that is 0.2.0-rc2)
 2) Extracts Eden
 3) Makes a portable installation of Eden
 4) Installs the firmware and keys for the user providing that they are present in the user's "Downloads" folder
