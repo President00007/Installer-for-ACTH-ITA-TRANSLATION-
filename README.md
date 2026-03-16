@@ -21,6 +21,7 @@ To Use:
 3) Go to the directory where the script is located and double click the "ACNH Installer for ACTH.py" file
 
 Credits:
+
 @juli_fr - Giving me the idea to add case specific checks
 
 @president00007 - Testing to see if this can be made into an exe
