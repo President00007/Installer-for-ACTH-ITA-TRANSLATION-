@@ -51,7 +51,7 @@ def downloadEden(consent):
     # If consent is given, Download eden
     # Again, another lengthy elif statement but this ensures every spelling of yes in both english and spanish
     elif consent == "Yes" or consent == "yes"  or consent == "Si" or consent == "Sí" or consent == "yEs" or consent == "yES" or consent == "YES" or consent == "sí" or consent == "SÍ" or consent == "sÍ" or consent == "si":
-        # Tell the user we're downloading ede
+        # Tell the user we're downloading eden
         print("Okay! Downloading Eden now...")
         # Send a request to Eden's gitlab and download
         downloaded_file = requests.get(eden_url, params=file_type)
