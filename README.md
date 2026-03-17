@@ -1,11 +1,3 @@
-  _____ _______         _______                  _       _   _             
- |_   _|__   __|/\     |__   __|                | |     | | (_)            
-   | |    | |  /  \       | |_ __ __ _ _ __  ___| | __ _| |_ _  ___  _ __  
-   | |    | | / /\ \      | | '__/ _` | '_ \/ __| |/ _` | __| |/ _ \| '_ \ 
-  _| |_   | |/ ____ \     | | | | (_| | | | \__ \ | (_| | |_| | (_) | | | |
- |_____|  |_/_/    \_\    |_|_|  \__,_|_| |_|___/_|\__,_|\__|_|\___/|_| |_|
-                                                                           
-                                                                           
 [tradotto da President00007, non esitate a contattarmi se trovate qualsiasi typo, grazie in anticipo!]
 Questo programma punta all'assistenza all'installazione di Eden Emulator per poterlo utilizzare con Animal Crossing: New Horizons
 
