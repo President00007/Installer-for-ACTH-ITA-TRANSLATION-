@@ -1,127 +1,127 @@
 # ACNH Installer
-# Created March 14th, 2026
-# Created by mitzikritzi2191
+# Creato il 14 Marzo 2026
+# Creato da mitzikritzi2191
 
-# Path allows us to use the user's home directory
+# "Path" ci permette di utilizzare la home directory dell'utente
 from pathlib import Path
-# This allows us to use functionalities such as making directories
+# Questo ci permette di usare funzionalità come creare delle directory
 import os
-# This allows us to download files from the internet
+# Questo ci permette di scaricare file da internet
 import requests
-# This allows us to extract files
+# Questo ci permette di estrarre i file
 from zipfile import ZipFile
-# This allows us to move files
+# Questo ci permette di muovere i file
 import shutil
 
-# Set a variable called "home" to Path.home() so we can use the user's home directory
+# Settare la variabile "home" dentro Path.home() così possiamo usare la home directory dell'utente
 home = Path.home()
-# Store the user's download folder
+# Memorizzo la cartella Download dell'utente
 downloads_folder = f"{home}\\Downloads"
-# Store eden's url as a string for use later
+# Memorizzo l'url di Eden come stringa per usarlo dopo
 eden_url = "https://git.eden-emu.dev/eden-emu/eden/releases/download/v0.2.0-rc2/Eden-Windows-v0.2.0-rc2-amd64-msvc-standard.zip"
-# Store the type of download
+# Memorizzo il tipo di download
 file_type = {"downloadformat": "zip"}
-# Set the file name of the eden zip
+# Setto il nome del file dello zip di Eden
 file_name = f"{home}\\Downloads\\Eden.zip"
-# Set the destination of where eden is installed
+# Setto la destinazione finale di Eden
 extracted_eden = f"{home}\\Downloads\\Eden"
-# Set the destination of the eden user directory and keys
+# Setto la destinazione di "user" e "keys" di Eden
 user_dir = f"{extracted_eden}\\user"
 keys_dir = f"{user_dir}\\keys"
-# File checking variables
+# Check di variabili dei file
 fw_check = Path(f"{home}\\Downloads\\Firmware.21.0.0.zip")
 keys_check = Path(f"{home}\\Downloads\\prod.keys")
-# Set where the firmware is to be installed
+# Setto dove il firmware verrà installato
 fw_install_path = f"{user_dir}\\nand\\system\\contents\\registered"
 
-# Print text to the console
-print("Hello! Welcome to the official installer for ACNH.")
-print("This script will download eden for you and install")
-print("the Prod.keys file and Title.keys file for you!")
-# Get consent to download eden
-consent = input("May I download the latest eden version? (As of 16/03/2026 that is v0.2.0-rc2!) (Yes/No): ")
+# Stampa testo sulla console
+print("Ciao! Benvenuto/a nell'installer ufficiale di ACNH.")
+print("Questo script scaricherà e installerà Eden per te")
+print("Inclusi prod.keys e title.keys!")
+# Ricevo consenso per scaricare Eden
+consent = input("Posso scaricare l'ultima versione di Eden? (in data 16/03/2026 è v0.2.0-rc2!) (Sì/No): ")
 
-# This function downloads eden
+# Questa funzione scarica Eden
 def downloadEden(consent):
-    # If consent is not given, Terminate the program
-    # I know the if statement is a bit lengthy but this ensures every possible combination of the word "No"
-    if consent == "No" or consent == "no" or consent == "nO" or consent == "NO":
-        print("That's okay ^^ I will not download Eden.")
-        print("This program will be terminated. Thank you for using it!")
-    # If consent is given, Download eden
-    # Again, another lengthy elif statement but this ensures every spelling of yes in both english and spanish
-    elif consent == "Yes" or consent == "yes"  or consent == "Si" or consent == "Sí" or consent == "yEs" or consent == "yES" or consent == "YES" or consent == "sí" or consent == "SÍ" or consent == "sÍ" or consent == "si":
-        # Tell the user we're downloading eden
-        print("Okay! Downloading Eden now...")
-        # Send a request to Eden's gitlab and download
+    # Se il consenso non è stato dato, termina il programma
+    # So che l'if è lunghetto, ma ciò fa sì che siano incluse tutte le combinazioni di NO
+    if consent == "No" or consent == 'N' or consent == 'n' or consent == "no" or consent == "nO" or consent == "NO":
+        print("Non preoccuparti ^^ non installerò Eden")
+        print("Questo programma sarà terminato. Grazie per averlo usato!")
+    # Se il consenso è stato dato, scarica Eden
+    # Di nuovo, un elif lunghetto ma fa sì che siano inclusi tutti gli spelling in inglese e italiano
+    elif consent == "Yes" or consent == "yes" or consent == 'Y' or consent == 'y' or consent == 'S' or consent == 's' or consent == "Si" or consent == "Sí" or consent == "yEs" or consent == "yES" or consent == "YES" or consent == "sí" or consent == "SÍ" or consent == "sÍ" or consent == "si":
+        # Dico all'utente che sto scaricando Eden
+        print("Ok! Download di Eden in corso...")
+        # Mando la richiesta al gitlab di Eden e scarico
         downloaded_file = requests.get(eden_url, params=file_type)
-        # Check if the file is corrupted
+        # Controllo se il file è corrotto
         sanity_check = downloaded_file.ok
-        # If the sanity check fails, tell the user that the download failed and to run the program again
+        # Se il sanity check fallisce, dico all'utente che il download è fallito e di riprovare nuovamente
         if sanity_check == False:
-            print("Download Failed! Please restart the program.")
-        # If the sanity check passes, Tell the user that the download succeeded and save the file
+            print("Download fallito (Sanity check failure)! Per favore, riapri il programma.")
+        # Se il sanity check avviene con successo, dico all'utente che il download si è concluso con successo e salvo il file
         elif sanity_check == True:
-            print("Download Succeeded! Now saving...")
+            print("Download completato con successo! Salvataggio del file...")
             with open(file_name, mode="wb") as file:
                 file.write(downloaded_file.content)
-            print(f"Eden has been downloaded and saved to {file_name}! Now preparing for the next steps in installation!")
+            print(f"Eden è stato scaricato e salvato in {file_name}! Preparazione per il prossimo step dell'installazione...")
 downloadEden(consent)
-# Notify to the user what is going to happen in phase 2 of install
-print(f"In phase two of installation, I will be extracting 'Eden.zip' that is located in {file_name}!")
-print("I will also be creating a folder called 'user' in the Eden directory, and I will be creating a subdirectory called 'keys' ^-^")
+# Notifica l'utente che cosa accadrà nella fase 2 dell'installazione
+print(f"Nella seconda fase dell'installazione, estrarrò 'Eden.zip', collocato nella directory {file_name}!")
+print("Inoltre, creerò una cartella 'user' nella directory di Eden e una sottocartella chiamata 'keys' ^-^")
 
-# This function sets up eden
+# Questa funzione imposta Eden per l'uso
 def setupEden():
-    # Open the file and extract to where we want it to go
+    # Apro il file ed estraggo dove deve andare
     with ZipFile(file_name, 'r') as zObject:
         zObject.extractall(path=f"{extracted_eden}")
-    # Notify the user that Eden has been extracted and where it is available
-    print(f"Eden has been extracted and is available in {extracted_eden}!")
-    # Tell the user we're making a new directory
-    print("Now creating directory 'user'!")
-    # Actually create the directory
+    # Notifico l'utente che Eden è stato estratto e dov'è disponibile
+    print(f"Eden è stato estratto ed è disponibile in {extracted_eden}!")
+    # Dico all'utente che stiamo creando una nuova directory
+    print("Creazione della directory 'user' in corso...")
+    # Creazione effettiva della directory
     if not os.path.exists(user_dir):
         os.makedirs(user_dir)
-    # Tell the user we made it
-    print("'user' directory created!")
-    # Now do the same thing except this time for keys
+    # Dico all'utente che ha avuto successo
+    print("'user' directory creato!")
+    # Ora stessa cosa ma per le keys
     if not os.path.exists(keys_dir):
         os.makedirs(keys_dir)
-    print("'keys' directory created!")
-    # ...and firmware
+    print("'keys' directory creato!")
+    # ...e firmware
     if not os.path.exists(fw_install_path):
         os.makedirs(fw_install_path)
-    print("Firmware install path created!")
+    print("Percorso di installazione del Firmware creato!")
 setupEden()
-# Inform the user eden is installed and its a portable install, Then tell them we're searching the downloads folder
-print(f"Eden has now been installed and is a portable installation! I will be searching your downloads folder for Prod.keys now!")
+# Informo l'utente che Eden è installato ed è portatile, dopo dirò che stiamo controllando nella cartella Download
+print(f"Eden è stato installato ed è un'installazione portatile! Ora controllo la tua cartella Download per prod.keys!")
 
-# Install the keys and firmware
+# Installo keys e firmware
 def installKeysNfw():
-    # Tell the user we're installing keys
-    print("Installing keys! Please wait a moment...")
+    # Dico all'utente che stiamo installando le keys
+    print("Installazione delle keys in corso! Attendi...")
     try:
-        # Attempt to move the keys into our keys directory
+        # Tento di spostare le keys nella nostra 'keys' directory
         shutil.move(keys_check, f"{keys_dir}\\prod.keys")
-        # Notify of a successful install
-        print("Keys installed! Now installing firmware...")
-    # If the file isnt found, tell the user how to fix it, then continue
+        # Notifica di un'installazione compiuta
+        print("Keys installati! Installazione del firmware in corso...")
+    # Se il file non è stato trovato, dico all'utente come risolvere, poi continuo
     except FileNotFoundError:
-        print("Keys file not found! Please put them in the Downloads folder on your computer and ensure its named 'prod.keys'!")
+        print("Keys non trovate! Per favore, inseriscile nella cartella Download del tuo computer e assicurati che il file sia chiamato 'prod.keys'!")
     try:
-        # Extract the firmware to where it needs to go
+        # Estraggo il firmware dove deve andare
         with ZipFile(fw_check, 'r') as zObject:
             zObject.extractall(path=f"{fw_install_path}")
-        # Notify of a successful install
-        print("Firmware installed!")
-    # If firmware isnt found, tell the user how to fix it
+        # Notifica di un'installazione compiuta
+        print("Firmware installato!")
+    # Se il firmware non è stato trovato, dico all'utente come risolvere
     except FileNotFoundError:
-        print("Firmware zip not found! Please put the firmware zip in the Downloads folder on your computer and ensure its named 'Firmware.21.0.0.zip'!")
+        print("File zip del firmware non trovato! Per favore, inserisci il file zip del firmware nella cartella Download del tuo computer e assicurati che il file sia chiamato 'Firmware.21.0.0.zip'!")
 installKeysNfw()
 
-# Tell the user that eden has been installed and to press enter to exit
-# and do a lil advertising :Bellapsycho:
-print("That's all! If you aren't already, join our discord server for fun treasure islands and hangouts!")
+# Dico all'utente che Eden è stato installato e di premere Invio per uscire
+# e un piccolo advertising hehe :Bellapsycho:
+print("Ecco qua! Se non ancora non ci sei, unisciti al nostro server discord per divertenti treasure islands e fare qualche hangout!")
 print("https://discord.gg/actreasurehub")
-end = input("Eden has been installed! Press enter to exit!")
+end = input("Eden è stato installato! Premi Invio per uscire!")
