@@ -33,3 +33,44 @@ Credits:
 @agusguzi - Spanish Translation
 
 @melymels94 - Emotional Support and creating such a lovely community
+
+Portugese Translation:
+
+Este programa é pensado para auxiliar na instalação do Emulador Eden para o uso do Animal Crossing: New Horizons
+
+Este código NÃO contém código protegido por direitos autorais, pois está apenas baixando arquivos facilmente acessíveis na internet. Não apoio e nem irei apoiar pirataria. O uso do programa é pensado para qualquer novo membro do servidor Discord Animal Crossing Treasure Hub for Yuzu Based Emulators que não saiba o que está fazendo.
+
+Esse programa faz os seguintes passos:
+
+    Baixa a ultima versão do Eden (No momento sendo 0.2.0-rc2)
+    Extrai o Eden
+    Cria uma instalação portátil do Eden
+    Instala o firmware e as keys para o usuário, desde que estejam presentes na pasta “Downloads”
+
+Esse programa NÃO baixa as chaves ou firmware para você! Devem ser baixados antes de você abrir esse programa!
+
+Nós NÃO damos suporte a pirataria. Para ter suporte relacionado ao programa, crie um issue na guia de issues. Suporte não será feito no servidor do Discord.
+
+
+Não tenho qualquer ligação à Nintendo de qualquer maneira. Só sou um programador que tem muito tempo livre no momento.
+
+Como usar:
+
+    Baixe e instale o Python em https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe
+    Abra o Prompt de Comandos e digite: python -m pip install requests
+    Vá até o diretório onde o script está localizado e clique duas vezes no arquivo “ACNH Installer for ACTH.py”
+
+Alternativa:
+
+    Vá a guia de releases
+   Baixe e execute o .exe
+
+Creditos:
+
+@juli_fr - Me deu a ideia de adicionar verificações específicas de cada caso
+
+@president00007 - Converteu para .exe
+
+@agusguzi - Tradução para Espanhol
+
+@melymels94 - Suporte emocional e criando uma comunidade tão adorável
