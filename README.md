@@ -1,31 +1,41 @@
-This program aims to assist in the installation of the Eden Emulator for use with Animal Crossing: New Horizons
+  _____ _______         _______                  _       _   _             
+ |_   _|__   __|/\     |__   __|                | |     | | (_)            
+   | |    | |  /  \       | |_ __ __ _ _ __  ___| | __ _| |_ _  ___  _ __  
+   | |    | | / /\ \      | | '__/ _` | '_ \/ __| |/ _` | __| |/ _ \| '_ \ 
+  _| |_   | |/ ____ \     | | | | (_| | | | \__ \ | (_| | |_| | (_) | | | |
+ |_____|  |_/_/    \_\    |_|_|  \__,_|_| |_|___/_|\__,_|\__|_|\___/|_| |_|
+                                                                           
+                                                                           
+[tradotto da President00007, non esitate a contattarmi se trovate qualsiasi typo, grazie in anticipo!]
+Questo programma punta all'assistenza all'installazione di Eden Emulator per poterlo utilizzare con Animal Crossing: New Horizons
 
-This code contains NO copyrighted code as it is merely downloading files readily accessible on the internet. I do not support piracy, nor will I ever support piracy.
-The program's intended use is for any new members of the Animal Crossing Treasure Hub for Yuzu Based Emulators discord server that do not know what they are doing.
+Questo script NON contiene codice protetto da copyright, dato che scarica dei file facilmente accessibili su internet. Non supporto la pirateria, né lo farò mai. Il programma è stato pensato per qualsiasi nuovo membro del server Discord di "Animal Crossing Treasure Hub for Yuzu Based Emulators" che non sa da dove iniziare.
 
-This program does the following:
-1) Downloads the latest version of Eden (As of writing that is 0.2.0-rc2)
-2) Extracts Eden
-3) Makes a portable installation of Eden
-4) Installs the firmware and keys for the user providing that they are present in the user's "Downloads" folder
+Ecco cosa fa il programma:
 
-This program does NOT download the keys or firmwares for you! Those must be acquired BEFORE launching this program!
+1. Scarica l'ultima versione di Eden (nel momento in cui sto scrivendo è 0.2.0-rc2)
+2. Estrae Eden.zip
+3. Crea un'installazione di Eden "portatile" (ovvero in un'unica cartella)
+4. Installa il firmware (.zip) e le keys (prod.keys) per l'utente, a patto che siano già presenti all'interno della cartella "Download"
 
-We do NOT support piracy. For support with this program, Create an issue in the issues tab. Support will not be given on the discord server.
+Questo programma NON scarica keys o firmware per te! Devono essere ottenuti PRIMA di aprire il programma!
 
-I am not affiliated with Nintendo in any fashion. I'm just a programmer that has way too much time on their hands right now.
+Noi NON supportiamo la pirateria. Per il supporto con questo programma, manda un feedback dalla sezione "Issues" del GitHub. Non verrà dato supporto dal server Discord.
 
-To Use:
-1) Download and install Python from https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe
-2) Open a command prompt and type the following "python -m pip install requests"
-3) Go to the directory where the script is located and double click the "ACNH Installer for ACTH.py" file
+Non sono associato a Nintendo in alcun modo. Sono solo un programmatore che ha fin troppo tempo da perdere in questo momento.
 
-Credits:
+Come usare (tramite Python):
 
-@juli_fr - Giving me the idea to add case specific checks
+1. Scarica  e installa Python da https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe
+2. Apri il prompt dei comandi e scrivi il seguente "python -m pip install requests"
+3. Apri la directory dove si trova lo script e fai doppio click sul file "ACNH Installer for ACTH.py"
 
-@president00007 - Converting into an exe
+Come usare (file .exe):
+1. Scarica "ACNH Installer per ACTH (ita).exe"
+2. Esegui il programma e segui le istruzioni all'interno di esso ^^
 
-@agusguzi - Spanish Translation
-
-@melymels94 - Emotional Support and creating such a lovely community
+Crediti:
+@juli_fr - Dandomi l'idea di aggiungere dei case check
+@president00007 (io >:3) - Convertendolo in un .exe e traducendo in italiano
+@agusguzi - Traduzione in spagnolo
+@melymels94 - Supporto morale e creatrice di una community straordinaria
