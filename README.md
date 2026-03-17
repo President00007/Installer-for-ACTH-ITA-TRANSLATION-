@@ -20,6 +20,10 @@ To Use:
 2) Open a command prompt and type the following "python -m pip install requests"
 3) Go to the directory where the script is located and double click the "ACNH Installer for ACTH.py" file
 
+Alternatively:
+1) Visit the releases tab
+2) Download and run the exe
+
 Credits:
 
 @juli_fr - Giving me the idea to add case specific checks
