@@ -27,7 +27,8 @@ Come usare (file .exe):
 2. Esegui il programma e segui le istruzioni all'interno di esso ^^
 
 Crediti:
-@juli_fr - Dandomi l'idea di aggiungere dei case check
-@president00007 (io >:3) - Convertendolo in un .exe
-@agusguzi - Traduzione in spagnolo
-@melymels94 - Supporto morale e creatrice di una community straordinaria
+
+- @juli_fr - Dandomi l'idea di aggiungere dei case check
+- @president00007 (io >:3) - Convertendolo in un .exe
+- @agusguzi - Traduzione in spagnolo
+- @melymels94 - Supporto morale e creatrice di una community straordinaria
